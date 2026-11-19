@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Safe to spend calculator · Personal Wallet</title>
+<meta name="description" content="A free calculator: take the money in your everyday account, subtract this month's bills, savings and a buffer, and see what's really safe to spend. Nothing you type is saved or sent.">
+<meta name="theme-color" content="#2A111C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Safe to spend calculator">
+<meta property="og:description" content="A free calculator: take the money in your everyday account, subtract this month's bills, savings and a buffer, and see what's really safe to spend. Nothing you type is saved or sent.">
+<meta property="og:image" content="https://islameljamal30-glitch.github.io/personal-wallet/assets/img/og-image.png">
+<meta property="og:url" content="https://islameljamal30-glitch.github.io/personal-wallet/calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://islameljamal30-glitch.github.io/personal-wallet/calculator.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/calculator.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav nav--legal">
+  <div class="wrap nav__inner">
+    <a class="brand" href="./" aria-label="Personal Wallet home">
+      <img class="brand__icon" src="assets/img/app-icon-256.webp" width="32" height="32" alt="">
+      <span class="brand__name">Personal Wallet</span>
+    </a>
+    <nav class="footer__links nav__pages" aria-label="Pages">
+      <a href="calculator.html" aria-current="page">Calculator</a>
+      <a href="guides.html">Guides</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="legal guide">
+  <div class="wrap legal__inner">
+    <a class="back" href="./">← Back to Personal Wallet</a>
+    <h1>What’s safe to spend this month?</h1>
+    <p class="guide__lead">Four numbers, one answer. It’s worked out on this page. Nothing you type is saved or sent anywhere.</p>
+
+    <div class="calc" data-calc>
+      <div class="calc__fields">
+        <div class="field">
+          <label class="field__label" for="calc-money">Money in your everyday account right now</label>
+          <p class="field__help" id="calc-money-help">Your current account and cash today. Leave out savings and money you can’t use yet, like a blocked account.</p>
+          <div class="field__money"><span aria-hidden="true">€</span><input id="calc-money" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" aria-describedby="calc-money-help" data-amount="money"></div>
+        </div>
+
+        <fieldset class="field field--bills">
+          <legend class="field__label">Bills still to pay this month</legend>
+          <p class="field__help">Only what hasn’t left your account yet, like rent, phone or insurance.</p>
+          <ul class="bills" data-bills>
+            <li class="bill">
+              <label class="visually-hidden" for="bill-name-1">Bill 1 name</label>
+              <input class="bill__name" id="bill-name-1" type="text" autocomplete="off" placeholder="Rent">
+              <div class="field__money"><span aria-hidden="true">€</span><label class="visually-hidden" for="bill-amount-1">Bill 1 amount</label><input id="bill-amount-1" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" data-amount="bill"></div>
+              <button class="bill__remove" type="button" aria-label="Remove bill 1" data-remove>×</button>
+            </li>
+            <li class="bill">
+              <label class="visually-hidden" for="bill-name-2">Bill 2 name</label>
+              <input class="bill__name" id="bill-name-2" type="text" autocomplete="off" placeholder="Phone">
+              <div class="field__money"><span aria-hidden="true">€</span><label class="visually-hidden" for="bill-amount-2">Bill 2 amount</label><input id="bill-amount-2" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" data-amount="bill"></div>
+              <button class="bill__remove" type="button" aria-label="Remove bill 2" data-remove>×</button>
+            </li>
+          </ul>
+          <button class="btn-soft" type="button" data-add-bill>+ Add a bill</button>
+        </fieldset>
+
+        <div class="field">
+          <label class="field__label" for="calc-savings">Savings you still want to put aside this month</label>
+          <p class="field__help" id="calc-savings-help">The part you haven’t moved yet.</p>
+          <div class="field__money"><span aria-hidden="true">€</span><input id="calc-savings" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" aria-describedby="calc-savings-help" data-amount="savings"></div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="calc-buffer">A safety buffer (optional)</label>
+          <p class="field__help" id="calc-buffer-help">A cushion you’d rather not touch. You can leave it at 0.</p>
+          <div class="field__money"><span aria-hidden="true">€</span><input id="calc-buffer" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="0" aria-describedby="calc-buffer-help" data-amount="buffer"></div>
+        </div>
+      </div>
+
+      <section class="calc__result ribbon" aria-labelledby="calc-result-title">
+        <h2 class="calc__title" id="calc-result-title">Safe to spend</h2>
+        <p class="calc__value num" data-result aria-live="polite">€0.00</p>
+        <p class="calc__short" data-short hidden></p>
+        <p class="calc__invalid" data-invalid hidden>An amount with a red outline couldn’t be read, so it counts as €0. Use digits, like 450 or 15,99.</p>
+        <div class="ribbon__bar" aria-hidden="true">
+          <span class="ribbon__seg ribbon__seg--safe" data-seg="safe"></span>
+          <span class="ribbon__seg ribbon__seg--reserved" data-seg="bills"></span>
+          <span class="ribbon__seg ribbon__seg--aside" data-seg="savings"></span>
+          <span class="ribbon__seg ribbon__seg--buffer" data-seg="buffer"></span>
+        </div>
+        <ul class="ribbon__legend">
+          <li><span class="sw sw--safe" aria-hidden="true"></span><span class="lg__label">Safe to spend</span><span class="lg__amount num" data-out="safe">€0.00</span></li>
+          <li><span class="sw sw--reserved" aria-hidden="true"></span><span class="lg__label">Bills still to pay</span><span class="lg__amount num" data-out="bills">€0.00</span></li>
+          <li><span class="sw sw--aside" aria-hidden="true"></span><span class="lg__label">Savings to put aside</span><span class="lg__amount num" data-out="savings">€0.00</span></li>
+          <li><span class="sw sw--buffer" aria-hidden="true"></span><span class="lg__label">Buffer</span><span class="lg__amount num" data-out="buffer">€0.00</span></li>
+        </ul>
+        <p class="calc__note">Money you expect, like your salary, isn’t counted until it arrives.</p>
+      </section>
+    </div>
+    <noscript><p class="guide__note">The calculator needs JavaScript. You can also work it out by hand: the money in your everyday account, minus the bills still to pay this month, minus the savings you still want to put aside, minus your buffer.</p></noscript>
+
+    <h2>How it’s worked out</h2>
+    <p>Safe to spend = the money in your everyday account − the bills still to pay this month − the savings you still want to put aside − your buffer.</p>
+    <p>If that comes out below zero, you’ll see how much more you need to cover it, not a negative number to spend.</p>
+    <h2>Why money you expect isn’t counted</h2>
+    <p>A salary or a transfer that hasn’t arrived yet can be late or smaller than you think. Counting it early is an easy way for a budget to go wrong at the end of the month. So the number only uses money you already have.</p>
+    <h2>Keep the number up to date</h2>
+    <p>This page gives you the number once. <a href="./">Personal Wallet</a> keeps it current as you spend, pay bills and put money aside, on your iPhone, with no bank login, no account and no ads. It’s coming soon to iPhone.</p>
+    <p class="guide__note">An estimate from what you enter, not financial advice.</p>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="footer__brand"><img src="assets/img/app-icon-256.webp" width="24" height="24" alt="">Personal Wallet for iPhone · Islam El Jamal, Berlin</p>
+    <nav class="footer__links" aria-label="More">
+      <a href="calculator.html" aria-current="page">Safe to spend calculator</a>
+      <a href="guides.html">Guides</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+    <p class="footer__fine">Figures on this site are estimates from what you enter. They are not financial or legal advice. © 2026 Islam El Jamal.</p>
+  </div>
+</footer>
+</body>
+</html>

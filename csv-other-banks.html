@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Other banks: download your transactions as a CSV file · Personal Wallet</title>
+<meta name="description" content="How to find the CSV export in your bank's online banking, and what a bank file needs so Personal Wallet can read it.">
+<meta name="theme-color" content="#2A111C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Other banks: download your transactions as a CSV file">
+<meta property="og:description" content="How to find the CSV export in your bank's online banking, and what a bank file needs so Personal Wallet can read it.">
+<meta property="og:image" content="https://islameljamal30-glitch.github.io/personal-wallet/assets/img/og-image.png">
+<meta property="og:url" content="https://islameljamal30-glitch.github.io/personal-wallet/csv-other-banks.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://islameljamal30-glitch.github.io/personal-wallet/csv-other-banks.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav nav--legal">
+  <div class="wrap nav__inner">
+    <a class="brand" href="./" aria-label="Personal Wallet home">
+      <img class="brand__icon" src="assets/img/app-icon-256.webp" width="32" height="32" alt="">
+      <span class="brand__name">Personal Wallet</span>
+    </a>
+    <nav class="footer__links nav__pages" aria-label="Pages">
+      <a href="calculator.html">Calculator</a>
+      <a href="guides.html" aria-current="page">Guides</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="legal guide">
+  <div class="wrap legal__inner">
+    <a class="back" href="guides.html">← All guides</a>
+    <h1>Other banks: download your transactions as a CSV file</h1>
+    <p class="meta">The rules below are those of Personal Wallet’s file reader, as of 19 November 2026.</p>
+
+    <h2>Finding the export</h2>
+    <p>Most banks put it in the same place:</p>
+    <ol class="steps">
+      <li>Log in to online banking, in a web browser or in your bank’s app.</li>
+      <li>Open <strong>Transactions</strong> (in German often <strong>Umsätze</strong>).</li>
+      <li>Choose <strong>Export</strong> or <strong>Download</strong>, then <strong>CSV</strong>.</li>
+    </ol>
+    <p>If your bank only offers PDF statements, Personal Wallet can’t read those. You can still add entries by hand.</p>
+
+    <h2>What the file needs</h2>
+    <ul>
+      <li>One line per transaction, with the column names in a line at the top.</li>
+      <li>A date, like 02.11.2026, 2026-11-02 or 02/11/2026. If a date with slashes could mean two days, Personal Wallet asks which number is the day.</li>
+      <li>An amount: either one column with a minus for money out, or separate money-out and money-in columns. Both 1.234,56 and 1,234.56 work. If it’s unclear, Personal Wallet asks.</li>
+      <li>A description or a name.</li>
+      <li>Columns separated by semicolons, commas or tabs. Up to 5 MB and 5,000 transactions per file.</li>
+    </ul>
+    <p>When Personal Wallet can’t tell which column is which, it shows you the columns with examples and asks you to pick the date, the amount and the description.</p>
+
+    <h2>What it can’t read</h2>
+    <ul>
+      <li>PDF statements, and formats such as MT940, CAMT XML or OFX.</li>
+      <li>Dates with a time attached, like 2026-11-02 10:23:45.</li>
+      <li>Some banks’ files at the moment, for example from DKB and Revolut.</li>
+      <li>Lines in a different currency than the account. They’re shown so you can see them, but not added.</li>
+    </ul>
+
+    <h2>Bringing it in</h2>
+    <p>In Personal Wallet, choose <strong>Bring in your bank’s transactions</strong> and pick the file. It’s read on your iPhone only, with no bank login. You check every line, choose categories, and nothing is added until you confirm. Your first import is free. More imports come with Personal Wallet Pro.</p>
+    <p>Personal Wallet is coming soon to iPhone. Step-by-step guides: <a href="csv-sparkasse.html">Sparkasse</a>, <a href="csv-ing.html">ING</a>, <a href="csv-n26.html">N26</a>.</p>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="footer__brand"><img src="assets/img/app-icon-256.webp" width="24" height="24" alt="">Personal Wallet for iPhone · Islam El Jamal, Berlin</p>
+    <nav class="footer__links" aria-label="More">
+      <a href="calculator.html">Safe to spend calculator</a>
+      <a href="guides.html" aria-current="page">Guides</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+    <p class="footer__fine">Figures on this site are estimates from what you enter. They are not financial or legal advice. © 2026 Islam El Jamal.</p>
+  </div>
+</footer>
+</body>
+</html>
