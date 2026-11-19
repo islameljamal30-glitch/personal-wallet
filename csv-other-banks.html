@@ -51,7 +51,7 @@
     <h2>What the file needs</h2>
     <ul>
       <li>One line per transaction, with the column names in a line at the top.</li>
-      <li>A date, like 02.11.2026, 2026-11-02 or 02/11/2026. If a date with slashes could mean two days, Personal Wallet asks which number is the day.</li>
+      <li>A date, like 02.11.2026, 2026-11-02, 2026-11-02 10:23 or 02/11/2026. If a date with slashes could mean two days, Personal Wallet asks which number is the day.</li>
       <li>An amount: either one column with a minus for money out, or separate money-out and money-in columns. Both 1.234,56 and 1,234.56 work. If it’s unclear, Personal Wallet asks.</li>
       <li>A description or a name.</li>
       <li>Columns separated by semicolons, commas or tabs. Up to 5 MB and 5,000 transactions per file.</li>
@@ -61,14 +61,14 @@
     <h2>What it can’t read</h2>
     <ul>
       <li>PDF statements, and formats such as MT940, CAMT XML or OFX.</li>
-      <li>Dates with a time attached, like 2026-11-02 10:23:45.</li>
-      <li>Some banks’ files at the moment, for example from DKB and Revolut.</li>
       <li>Lines in a different currency than the account. They’re shown so you can see them, but not added.</li>
     </ul>
 
+    <p>If your bank’s file has a status column, payments it marks as declined, reversed or still pending are left out, and Personal Wallet tells you how many.</p>
+
     <h2>Bringing it in</h2>
     <p>In Personal Wallet, choose <strong>Bring in your bank’s transactions</strong> and pick the file. It’s read on your iPhone only, with no bank login. You check every line, choose categories, and nothing is added until you confirm. Your first import is free. More imports come with Personal Wallet Pro.</p>
-    <p>Personal Wallet is coming soon to iPhone. Step-by-step guides: <a href="csv-sparkasse.html">Sparkasse</a>, <a href="csv-ing.html">ING</a>, <a href="csv-n26.html">N26</a>.</p>
+    <p>Personal Wallet is coming soon to iPhone. Step-by-step guides: <a href="csv-sparkasse.html">Sparkasse</a>, <a href="csv-ing.html">ING</a>, <a href="csv-n26.html">N26</a>, <a href="csv-dkb.html">DKB</a>, <a href="csv-revolut.html">Revolut</a>.</p>
   </div>
 </main>
 <footer class="footer">

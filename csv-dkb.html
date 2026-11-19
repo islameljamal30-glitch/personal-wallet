@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>DKB: download your transactions as a CSV file · Personal Wallet</title>
+<meta name="description" content="How to export your DKB current account transactions (Umsätze) as a CSV file in DKB Banking, and what Personal Wallet reads from it.">
+<meta name="theme-color" content="#2A111C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DKB: download your transactions as a CSV file">
+<meta property="og:description" content="How to export your DKB current account transactions (Umsätze) as a CSV file in DKB Banking, and what Personal Wallet reads from it.">
+<meta property="og:image" content="https://islameljamal30-glitch.github.io/personal-wallet/assets/img/og-image.png">
+<meta property="og:url" content="https://islameljamal30-glitch.github.io/personal-wallet/csv-dkb.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://islameljamal30-glitch.github.io/personal-wallet/csv-dkb.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav nav--legal">
+  <div class="wrap nav__inner">
+    <a class="brand" href="./" aria-label="Personal Wallet home">
+      <img class="brand__icon" src="assets/img/app-icon-256.webp" width="32" height="32" alt="">
+      <span class="brand__name">Personal Wallet</span>
+    </a>
+    <nav class="footer__links nav__pages" aria-label="Pages">
+      <a href="calculator.html">Calculator</a>
+      <a href="guides.html" aria-current="page">Guides</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="legal guide">
+  <div class="wrap legal__inner">
+    <a class="back" href="guides.html">← All guides</a>
+    <h1>DKB: download your transactions as a CSV file</h1>
+    <p class="meta">For the DKB Banking introduced in 2023. Checked on 19 November 2026 against Personal Wallet’s file reader.</p>
+
+    <h2>Steps</h2>
+    <ol class="steps">
+      <li>Log in to DKB Banking in a web browser.</li>
+      <li>Open your current account (Girokonto) and its transactions (<strong>Umsätze</strong>).</li>
+      <li>If you can, filter the list to the dates you want.</li>
+      <li>Choose <strong>Exportieren</strong>. If you’re offered a format, choose CSV. A PDF won’t work.</li>
+      <li>Save the file. On a computer, you can send it to your iPhone with AirDrop or save it to iCloud Drive.</li>
+    </ol>
+    <p class="guide__note">Menus can change. If you only see a PDF option, DKB may not offer CSV there; try DKB Banking in a web browser.</p>
+
+    <h2>What Personal Wallet reads from it</h2>
+    <p>DKB’s file starts with a few lines about the account. Personal Wallet skips those and finds the transactions on its own. It reads the booking date, the amount in euros and the other party: who paid you for money in, who you paid for money out.</p>
+    <p>Payments DKB marks as pending (vorgemerkt) are left out, so nothing is counted twice. They come in with a later file once they’re booked.</p>
+
+    <h2>Bringing it in</h2>
+    <p>In Personal Wallet, choose <strong>Bring in your bank’s transactions</strong> and pick the file. It’s read on your iPhone only, with no bank login. You check every line, choose categories, and nothing is added until you confirm. Your first import is free. More imports come with Personal Wallet Pro.</p>
+    <p>Personal Wallet is coming soon to iPhone.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li>The file contains your IBAN and payment details. Delete it from your downloads when you’re done.</li>
+      <li>Never share your banking login or confirmation codes with any app. Personal Wallet never asks for them.</li>
+    </ul>
+  </div>
+</main>
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="footer__brand"><img src="assets/img/app-icon-256.webp" width="24" height="24" alt="">Personal Wallet for iPhone · Islam El Jamal, Berlin</p>
+    <nav class="footer__links" aria-label="More">
+      <a href="calculator.html">Safe to spend calculator</a>
+      <a href="guides.html" aria-current="page">Guides</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+    <p class="footer__fine">Figures on this site are estimates from what you enter. They are not financial or legal advice. © 2026 Islam El Jamal.</p>
+  </div>
+</footer>
+</body>
+</html>
