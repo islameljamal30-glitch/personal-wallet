@@ -475,3 +475,4 @@ button { font: inherit; color: inherit; }
 .field--bills > legend { float: left; width: 100%; }
 .field--bills > legend + * { clear: both; }
 .legal .calc__invalid { margin-top: 10px; color: #F3B3AB; font-size: 0.92rem; }
+.legal ol.steps + p { margin-top: 18px; }
