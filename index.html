@@ -1,25 +1,398 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Personal Wallet · Personal Wallet</title>
-<style>
-:root{--bg:#F7F4F1;--text:#211A1D;--muted:#6B5F64;--brand:#5C2539;--line:#E4DBD6;--card:#FFFFFF}
-@media (prefers-color-scheme:dark){:root{--bg:#171214;--text:#F3ECEE;--muted:#B9A9AF;--brand:#E3A9BE;--line:#3A2F33;--card:#211A1D}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);
-font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-main{max-width:720px;margin:0 auto;padding:32px 16px 64px}
-header{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
-header strong{color:var(--brand);font-size:18px;margin-right:auto}
-nav a{margin-left:16px}nav a:first-child{margin-left:0}
-a{color:var(--brand)}h1{font-size:30px;line-height:1.2;margin:8px 0}h2{font-size:20px;margin:32px 0 8px}
-p,li{color:var(--text)}ul{padding-left:22px}footer{margin-top:48px;color:var(--muted);font-size:14px}
-</style></head>
-<body><main>
-<header><strong>Personal Wallet</strong><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="impressum.html">Impressum</a></nav></header>
-<h1>Personal Wallet</h1>
-<p>A calm, private way to see where your money is and plan ahead. Your wallet stays on your iPhone.</p>
-<ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li>
-<li><a href="impressum.html">Impressum</a></li></ul>
-<p>Support: <a href="mailto:islamjamal59@gmail.com">islamjamal59@gmail.com</a></p>
-<footer>Personal Wallet for iPhone · Islam El Jamal, Berlin · <a href="impressum.html">Impressum</a></footer>
-</main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Personal Wallet: know what’s safe to spend</title>
+<meta name="description" content="Personal Wallet is an iPhone budgeting app with one clear number: what’s safe to spend after this month’s bills and savings. No bank login, no account, no ads. Coming soon to iPhone.">
+<meta name="theme-color" content="#2A111C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal Wallet: know what’s safe to spend">
+<meta property="og:description" content="One clear number for this month, after your bills and savings. No bank login, no account, no ads. Coming soon to iPhone.">
+<meta property="og:image" content="https://islameljamal30-glitch.github.io/personal-wallet/assets/img/og-image.png">
+<meta property="og:url" content="https://islameljamal30-glitch.github.io/personal-wallet/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://islameljamal30-glitch.github.io/personal-wallet/">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/inter-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/vendor/lenis.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/boot.js"></script>
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/SplitText.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" data-nav>
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="Personal Wallet, back to top">
+      <img class="brand__icon" src="assets/img/app-icon-256.webp" width="32" height="32" alt="">
+      <span class="brand__name">Personal Wallet</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <span class="pill pill--nav"><span class="pill__dot" aria-hidden="true"></span><span class="shiny">Coming soon to iPhone</span></span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. Hero -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="pill pill--hero" data-hero><span class="pill__dot" aria-hidden="true"></span><span class="shiny">Coming soon to iPhone</span></p>
+      <h1 class="display" id="hero-title" data-split>Know<br> what’s <span class="accent">safe<br> to spend.</span></h1>
+      <p class="lead" data-hero>One clear number for this month: what’s left after your bills and savings are set aside.</p>
+      <ul class="facts" data-hero aria-label="Promises">
+        <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>No bank login</li>
+        <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>No account</li>
+        <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>No ads</li>
+        <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Works offline</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual" data-hero-visual>
+      <figure class="float-card float-card--ribbon" data-float="-14" aria-hidden="true">
+        <img src="assets/img/card-ribbon.webp" width="760" height="716" alt="">
+      </figure>
+      <div class="phone phone--video" data-phone>
+        <div class="phone__screen">
+          <video class="js-autoplay" muted loop playsinline preload="auto" poster="assets/video/add-expense-poster.webp" aria-label="Personal Wallet on iPhone: adding a 12.50 euro expense, and the Today screen updates straight away.">
+            <source src="assets/video/add-expense.webm" type="video/webm">
+            <source src="assets/video/add-expense.mp4" type="video/mp4">
+          </video>
+        </div>
+        <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video"><svg viewBox="0 0 20 20" aria-hidden="true"><path class="i-pause" d="M7 5v10M13 5v10"/><path class="i-play" d="M7 5l8 5-8 5z"/></svg></button>
+      </div>
+      <figure class="float-card float-card--verdict" data-float="12" aria-hidden="true">
+        <img src="assets/img/card-verdict.webp" width="760" height="840" alt="">
+      </figure>
+    </div>
+  </div>
+  <p class="hero__note wrap">Real screens from the app, with a demo wallet.</p>
+</section>
+
+<!-- 2. Statement -->
+<section class="statement" aria-label="Why Personal Wallet">
+  <div class="wrap">
+    <p class="statement__text" data-scroll-reveal data-highlight>Your bank balance shows what’s in your account. It doesn’t know your rent is due next week. Personal Wallet sets aside your bills and savings first, so the number you see is the number you can use.</p>
+  </div>
+</section>
+
+<!-- 3. Money ribbon -->
+<section class="ribbon-sec" aria-labelledby="ribbon-title">
+  <div class="wrap ribbon-sec__grid">
+    <div class="ribbon-sec__main">
+      <div class="sec-head" data-reveal>
+        <h2 class="h2" id="ribbon-title">See where your money is.</h2>
+        <p class="sub">Personal Wallet splits your money into what’s safe to spend, what you’ve set aside, and what’s reserved for bills. Only the first part is yours to spend.</p>
+      </div>
+      <div class="ribbon" data-ribbon role="img" aria-label="Example from the app’s demo wallet: of €10,287.55, €6,044.56 is safe to spend, €4,200.00 is set aside and €42.99 is reserved for bills.">
+        <p class="ribbon__total">Where your <span class="num" data-count="10287.55">€10,287.55</span> is</p>
+        <div class="ribbon__bar" aria-hidden="true">
+          <span class="ribbon__seg ribbon__seg--safe" data-grow="6044.56"></span>
+          <span class="ribbon__seg ribbon__seg--aside" data-grow="4200"></span>
+          <span class="ribbon__seg ribbon__seg--reserved" data-grow="42.99"></span>
+        </div>
+        <ul class="ribbon__legend" aria-hidden="true">
+          <li><span class="sw sw--safe"></span><span class="lg__label">Safe to spend<small>Yours to use</small></span><span class="num lg__amount" data-count="6044.56">€6,044.56</span></li>
+          <li><span class="sw sw--aside"></span><span class="lg__label">Set aside<small>Kept for savings</small></span><span class="num lg__amount" data-count="4200">€4,200.00</span></li>
+          <li><span class="sw sw--reserved"></span><span class="lg__label">Reserved<small>Bills and essentials</small></span><span class="num lg__amount" data-count="42.99">€42.99</span></li>
+        </ul>
+      </div>
+    </div>
+    <figure class="ribbon-sec__card" data-reveal>
+      <img src="assets/img/card-ribbon.webp" width="760" height="716" loading="lazy" decoding="async" alt="The same card in the app: Where your €10,287.55 is, split into Safe to spend €6,044.56, Set aside €4,200.00 and Reserved €42.99.">
+      <figcaption>The same card in the app.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 4. How it works -->
+<section class="how" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head sec-head--center" data-reveal>
+      <h2 class="h2" id="how-title">Set up in about two minutes.</h2>
+      <p class="sub">Three steps. Rough numbers are fine, and you can change everything later.</p>
+    </div>
+    <div class="how__grid">
+      <ol class="how__steps" data-steps>
+        <li class="step" data-step="0">
+          <span class="step__num" aria-hidden="true">1</span>
+          <h3 class="h3">Tell it what you have</h3>
+          <p>Add your bank account, cash, savings, or a blocked account that pays out monthly.</p>
+          <div class="phone phone--shot step__phone"><div class="phone__screen"><img src="assets/img/screen-setup-money.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Setup: Where is your money? A bank account with €1,500."></div></div>
+        </li>
+        <li class="step" data-step="1">
+          <span class="step__num" aria-hidden="true">2</span>
+          <h3 class="h3">Bills come first</h3>
+          <p>Tap your regular bills. Their money stays reserved until you mark them paid.</p>
+          <div class="phone phone--shot step__phone"><div class="phone__screen"><img src="assets/img/screen-setup-bills.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Setup: What do you pay every month? Rent and Phone selected."></div></div>
+        </li>
+        <li class="step" data-step="2">
+          <span class="step__num" aria-hidden="true">3</span>
+          <h3 class="h3">What’s left is yours</h3>
+          <p>One number for the rest of the month. Income only counts once it arrives.</p>
+          <div class="phone phone--shot step__phone"><div class="phone__screen"><img src="assets/img/screen-today-after.webp" width="780" height="1696" loading="lazy" decoding="async" alt="The Today screen: €6,044.56 is yours to spend."></div></div>
+        </li>
+      </ol>
+      <div class="how__stage" aria-hidden="true">
+        <div class="how__progress"><span data-progress></span></div>
+        <div class="phone phone--shot">
+          <div class="phone__screen">
+            <img class="how__screen is-active" src="assets/img/screen-setup-money.webp" width="780" height="1696" loading="lazy" decoding="async" alt="">
+            <img class="how__screen" src="assets/img/screen-setup-bills.webp" width="780" height="1696" loading="lazy" decoding="async" alt="">
+            <img class="how__screen" src="assets/img/screen-today-after.webp" width="780" height="1696" loading="lazy" decoding="async" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Try a purchase -->
+<section class="afford" aria-labelledby="afford-title">
+  <div class="wrap">
+    <div class="afford__panel">
+      <div class="afford__visual">
+        <div class="phone phone--video" data-phone-small>
+          <div class="phone__screen">
+            <video class="js-autoplay" muted loop playsinline preload="none" poster="assets/video/afford-poster.webp" aria-label="Personal Wallet’s Can I afford something? Entering 899 euros shows: You can do this. Your bills this month stay covered.">
+              <source src="assets/video/afford.webm" type="video/webm">
+              <source src="assets/video/afford.mp4" type="video/mp4">
+            </video>
+          </div>
+          <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video"><svg viewBox="0 0 20 20" aria-hidden="true"><path class="i-pause" d="M7 5v10M13 5v10"/><path class="i-play" d="M7 5l8 5-8 5z"/></svg></button>
+        </div>
+      </div>
+      <div class="afford__copy" data-reveal>
+        <p class="tag">Free</p>
+        <h2 class="h2" id="afford-title">Try a purchase before you buy it.</h2>
+        <p class="sub">Type a price and a date. Personal Wallet shows what changes to your month and whether your bills stay covered. Nothing is saved or moved.</p>
+        <ul class="ticks">
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Drag along the chart to try another day</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Compare your month before and after</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Your real money stays where it is</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Features -->
+<section class="features" id="features" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2" id="features-title">Small tools for everyday money.</h2>
+      <p class="sub">Everything you need to run a month, and nothing that gets in the way.</p>
+    </div>
+    <div class="bento">
+      <article class="card card--w3" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">Bring in your bank’s CSV file</h3>
+          <p>Download a CSV from your online banking and bring it in. It’s read on your iPhone, and nothing is added until you check it. Your first import is free.</p>
+        </div>
+        <div class="card__shot card__shot--top"><img src="assets/img/screen-import.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Import a bank file: 7 to add, with City Bus as Transport, Corner Cafe as Eating out and Green Pharmacy as Health."></div>
+      </article>
+      <article class="card card--w3" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">Add an expense in seconds</h3>
+          <p>Type the amount, pick a category, save. Your numbers update straight away.</p>
+        </div>
+        <div class="card__shot card__shot--top"><img src="assets/img/screen-quickadd.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Add expense: €12.50, Eating out, Today, My wallet."></div>
+      </article>
+      <article class="card card--w2" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">Budgets that show what’s left</h3>
+          <p>Set a limit per category and see what’s still free.</p>
+        </div>
+        <div class="card__shot card__shot--budgets"><img src="assets/img/screen-budgets.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Budgets: €390.20 left of €900.00 across 5 budgets."></div>
+      </article>
+      <article class="card card--w2" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">Save for what matters</h3>
+          <p>Savings goals with Add money. Three goals are free.</p>
+        </div>
+        <div class="card__shot card__shot--goals"><img src="assets/img/screen-goals.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Savings goal Summer trip: €1,050.00 saved of €1,800.00, 58%."></div>
+      </article>
+      <article class="card card--w2" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">See where it went</h3>
+          <p>A spending breakdown by month, year or all time.</p>
+        </div>
+        <div class="card__shot card__shot--insights"><img src="assets/img/screen-insights.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Insights: spending breakdown donut, €1,672.40 after refunds."></div>
+      </article>
+      <article class="card card--w2" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">Day by day <span class="badge">Pro</span></h3>
+          <p>Your balance for every day ahead, with the lowest point marked.</p>
+        </div>
+        <div class="card__shot card__shot--day"><img src="assets/img/screen-daybyday.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Day by day: balance chart with the lowest point, €9,107.06 on 1 Dec 2026."></div>
+      </article>
+      <article class="card card--w2" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">Your money on your Home Screen</h3>
+          <p>A Safe to spend widget is free. More looks with Pro.</p>
+        </div>
+        <div class="card__shot card__shot--widgets"><img src="assets/img/screen-widgets.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Widget gallery: a small Safe to spend widget, free, and a large Day by day widget, Pro."></div>
+      </article>
+      <article class="card card--w2 card--bordeaux" data-card data-spotlight>
+        <div class="card__text">
+          <h3 class="h3">Make it yours</h3>
+          <p>Light and dark mode, three colour themes.</p>
+        </div>
+        <div class="card__shot card__shot--themes"><img src="assets/img/screen-themes.webp" width="780" height="1696" loading="lazy" decoding="async" alt="Colours and appearance: the Bordeaux, Midnight and Graphite themes."></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Blocked account -->
+<section class="blocked" aria-labelledby="blocked-title">
+  <div class="wrap blocked__grid">
+    <div class="blocked__copy" data-reveal>
+      <p class="eyebrow">Money you can’t touch yet</p>
+      <h2 class="h2" id="blocked-title">A blocked account, handled.</h2>
+      <p class="sub">Add a blocked account, like a Sperrkonto, once: what’s in it and what it pays out each month. Personal Wallet keeps that money apart and releases each payout on schedule, so Safe to spend only counts money you can use.</p>
+    </div>
+    <div class="blocked__visual">
+      <div class="phone phone--shot" data-reveal-phone><div class="phone__screen"><img src="assets/img/screen-setup-done.webp" width="780" height="1696" loading="lazy" decoding="async" alt="You’re all set: Safe to spend now €1,500.00. Blocked account €12,000.00, and €992.00 arrives on 1 December."></div></div>
+      <figure class="float-card float-card--plan" data-float="10">
+        <img src="assets/img/card-blocked-plan.webp" width="760" height="772" loading="lazy" decoding="async" alt="What will happen: today €12,000.00 is held and not spendable yet. On 1 December €992.00 moves to the bank account and can be spent. After that €11,008.00 is still held, the same again every month, until the last payout on 1 December 2027, 13 in total. It is never counted as income.">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Privacy -->
+<section class="night" id="privacy" aria-labelledby="privacy-title">
+  <div class="night__glow" aria-hidden="true"></div>
+  <div class="wrap night__inner">
+    <h2 class="night__title" id="privacy-title" data-scroll-reveal data-highlight>No bank login.<br> No account. No ads.<br> Your data stays<br> on your iPhone.</h2>
+    <div class="night__tiles">
+      <article class="tile" data-card data-spotlight>
+        <svg class="tile__ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
+        <h3 class="h3">Works offline</h3>
+        <p>Your budget runs on your iPhone. It doesn’t need an internet connection.</p>
+      </article>
+      <article class="tile" data-card data-spotlight>
+        <svg class="tile__ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+        <h3 class="h3">Stays on your iPhone</h3>
+        <p>Your entries are stored on your iPhone, not on a server. There is no account to sign in to.</p>
+      </article>
+      <article class="tile" data-card data-spotlight>
+        <svg class="tile__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/><path d="M4 4l16 16"/></svg>
+        <h3 class="h3">No tracking</h3>
+        <p>No analytics, no ads and no tracking in the app.</p>
+      </article>
+    </div>
+    <p class="night__link" data-reveal><a href="privacy.html">Read the privacy policy</a></p>
+  </div>
+</section>
+
+<!-- 9. Free and Pro -->
+<section class="plans" aria-labelledby="plans-title">
+  <div class="wrap">
+    <div class="sec-head sec-head--center" data-reveal>
+      <h2 class="h2" id="plans-title">Free for everyday money.<br> Pro if you want more.</h2>
+    </div>
+    <div class="plans__grid">
+      <article class="plan" data-card data-spotlight>
+        <h3 class="plan__name">Free</h3>
+        <ul class="ticks">
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Safe to spend</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Everyday tracking and budgets</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Monthly plan and bills</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Up to 3 savings goals</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Try a purchase before you buy it</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Your first bank-file import</li>
+        </ul>
+      </article>
+      <article class="plan plan--pro" data-card data-spotlight>
+        <h3 class="plan__name"><span class="shiny shiny--light">Personal Wallet Pro</span></h3>
+        <p class="plan__note">An optional subscription, paid through your Apple ID.</p>
+        <ul class="ticks">
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Day by day, with your lowest point</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>More What if questions: save more, income or expenses change</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Custom budget cycles, bill calendar and savings schedules</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Unlimited savings goals and bank-file imports</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>All widgets, including the Lock Screen</li>
+          <li><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>Custom reports and PDF</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Questions -->
+<section class="faq" id="questions" aria-labelledby="faq-title">
+  <div class="wrap faq__wrap">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2" id="faq-title">Questions</h2>
+    </div>
+    <div class="faq__list" data-faq>
+      <div class="qa">
+        <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-1" id="qa-1-q">When can I get Personal Wallet?<span class="qa__icon" aria-hidden="true"></span></button></h3>
+        <div class="qa__a" id="qa-1" aria-labelledby="qa-1-q"><div><p>Soon. It isn’t on the App Store yet. When it is, this page will say so.</p></div></div>
+      </div>
+      <div class="qa">
+        <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-2" id="qa-2-q">Does it connect to my bank?<span class="qa__icon" aria-hidden="true"></span></button></h3>
+        <div class="qa__a" id="qa-2" aria-labelledby="qa-2-q"><div><p>No. You type in your own numbers, or bring in a CSV file that you download from your online banking yourself. Personal Wallet never asks for your bank login.</p></div></div>
+      </div>
+      <div class="qa">
+        <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-3" id="qa-3-q">Where is my data stored?<span class="qa__icon" aria-hidden="true"></span></button></h3>
+        <div class="qa__a" id="qa-3" aria-labelledby="qa-3-q"><div><p>On your iPhone. There is no account and no server, and your entries aren’t sent to anyone. The <a href="privacy.html">privacy policy</a> explains the details, such as Apple’s own device backups.</p></div></div>
+      </div>
+      <div class="qa">
+        <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-4" id="qa-4-q">Is Safe to spend financial advice?<span class="qa__icon" aria-hidden="true"></span></button></h3>
+        <div class="qa__a" id="qa-4" aria-labelledby="qa-4-q"><div><p>No. Safe to spend and the other figures are estimates based on what you enter.</p></div></div>
+      </div>
+      <div class="qa">
+        <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-5" id="qa-5-q">Is there an Android version?<span class="qa__icon" aria-hidden="true"></span></button></h3>
+        <div class="qa__a" id="qa-5" aria-labelledby="qa-5-q"><div><p>Not at the moment. Personal Wallet is made for iPhone.</p></div></div>
+      </div>
+      <div class="qa">
+        <h3 class="qa__h"><button class="qa__q" type="button" aria-expanded="false" aria-controls="qa-6" id="qa-6-q">How do I get help?<span class="qa__icon" aria-hidden="true"></span></button></h3>
+        <div class="qa__a" id="qa-6" aria-labelledby="qa-6-q"><div><p>Email <a href="mailto:islamjamal59@gmail.com">islamjamal59@gmail.com</a>. Please don’t send bank passwords, PINs or card numbers.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Closing -->
+<section class="closing" aria-labelledby="closing-title">
+  <div class="wrap closing__inner">
+    <div class="closing__icon" data-magnet><img src="assets/img/app-icon-512.webp" width="512" height="512" loading="lazy" decoding="async" alt="Personal Wallet app icon"></div>
+    <h2 class="h2" id="closing-title" data-reveal>Coming soon to iPhone.</h2>
+    <p class="sub" data-reveal>Questions or ideas? Write to <a href="mailto:islamjamal59@gmail.com">islamjamal59@gmail.com</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="footer__brand"><img src="assets/img/app-icon-256.webp" width="24" height="24" alt="">Personal Wallet for iPhone · Islam El Jamal, Berlin</p>
+    <nav class="footer__links" aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+    <p class="footer__fine">Safe to spend and other figures are estimates based on what you enter. They are not financial advice. © 2026 Islam El Jamal.</p>
+  </div>
+</footer>
+</body>
+</html>
